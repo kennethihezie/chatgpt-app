@@ -28,7 +28,7 @@ class ChatGptBloc extends Bloc<ChatGptObserverEvent, ChatGptObserverState> {
       final chat = await chatGptRepository.sendChat(event.chatGptRequest);
 
       await emitter.forEach<ChatGptResponse?>(chat, onData: (data)  {
-        if(data != null){
+        if(data?.choices != null){
           return state.copyWith(status: ChatGptObserverStatus.success, chatGptResponse: data);
         } else {
           return state.copyWith(status: ChatGptObserverStatus.failure);

@@ -16,7 +16,6 @@ void main() {
 
   Bloc.observer = ChatGptBlocObserver();
 
-
   runApp(MyApp());
 }
 

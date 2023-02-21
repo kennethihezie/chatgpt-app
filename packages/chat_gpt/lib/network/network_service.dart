@@ -18,7 +18,7 @@ class ChatGptNetworkService {
       final response = await _httpClient.post(request,
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': "Bearer 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"
+            'Authorization': "Bearer ${Constants.apiKey}"
           },
           body: jsonEncode(chatGptRequest.toMap()));
 
